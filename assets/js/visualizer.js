@@ -1,25 +1,29 @@
-// Multi Decor - Interactive Room & Wall Visualizer Studio Engine
+// Multi Decor - Realistic 3D Room & Wall Studio Engine (Wall-Only Texture Masking)
 
 const ROOM_PRESETS = {
   living: {
     name: "Luxury Living Room Accent Wall",
     image: "assets/images/visualizer/room_living.jpg",
-    description: "Spacious contemporary salon with ambient cove lighting and open-concept seating."
+    clipClass: "wall-clipped-living",
+    description: "Living room wall backdrop behind sectional sofa."
   },
   office: {
     name: "Executive Director Suite",
     image: "assets/images/visualizer/room_office.jpg",
-    description: "High-end corporate office backdrop suited for rugged PU stone or fluted panels."
+    clipClass: "wall-clipped-office",
+    description: "Office wall backdrop behind executive desk."
   },
   bedroom: {
     name: "Master Suite Headboard Wall",
     image: "assets/images/visualizer/room_bedroom.jpg",
-    description: "Serene bedroom space ideal for French panelling or warm acoustic wood slats."
+    clipClass: "wall-clipped-bedroom",
+    description: "Bedroom wall backdrop behind luxury headboard."
   },
   tv_wall: {
     name: "Modern Media & TV Console Wall",
     image: "assets/images/visualizer/room_tv_wall.jpg",
-    description: "Floor-to-ceiling media backdrop with integrated shelving and recessed LED channels."
+    clipClass: "wall-clipped-tv_wall",
+    description: "Media wall alcove behind low console."
   }
 };
 
@@ -27,91 +31,81 @@ const MATERIAL_FINISHES = {
   "fluted-walnut": {
     name: "1900 Series Smoked Walnut WPC",
     code: "MD1900-10",
-    category: "WPC Fluted Panel",
-    textureStyle: "repeating-linear-gradient(90deg, #2b1d14 0px, #2b1d14 14px, #1a110a 14px, #1a110a 20px, #422d1f 20px, #422d1f 24px)",
+    category: "WPC Fluted Louver",
+    textureStyle: "repeating-linear-gradient(90deg, #2b1d14 0px, #2b1d14 14px, #150e08 14px, #150e08 20px, #3d291c 20px, #3d291c 24px)",
     blendMode: "multiply",
-    opacity: 0.85,
-    lightingReflectance: "warm",
-    depth3d: "24mm Deep Ribs",
-    benefits: "Zero maintenance, anti-termite, authentic timber grain texture."
+    opacity: 0.88,
+    depth3d: "24mm Deep Architectural Ribs",
+    benefits: "No drilling required. Direct adhesive mount over painted or bare walls."
   },
   "fluted-gold": {
     name: "MM-8262 Gold Slat Fluted WPC",
     code: "MM-8262",
     category: "WPC Gold Inlay",
     textureStyle: "repeating-linear-gradient(90deg, #1b1b1b 0px, #1b1b1b 18px, #D4AF37 18px, #D4AF37 22px, #2a2a2a 22px, #2a2a2a 32px)",
-    blendMode: "screen",
-    opacity: 0.75,
-    lightingReflectance: "metallic",
-    depth3d: "12-inch Wide / Gold Line",
-    benefits: "Modern metallic shimmer with 6mm ultra-slim structural profile."
+    blendMode: "multiply",
+    opacity: 0.82,
+    depth3d: "12\" Wide / Brushed Gold Inlay",
+    benefits: "Combines 12-inch surface efficiency with brushed champagne gold inlays."
   },
   "pu-stone-volcanic": {
     name: "Imported PU Stone 50mm Slate",
     code: "PU-STN-50",
-    category: "PU Faux Rock",
-    textureStyle: "radial-gradient(circle at 50% 50%, rgba(60,60,60,0.6), rgba(20,20,20,0.9)), repeating-linear-gradient(45deg, #222 0px, #333 30px, #111 60px)",
-    blendMode: "overlay",
+    category: "PU Faux Rock Sheet",
+    textureStyle: "radial-gradient(circle at 50% 50%, rgba(60,60,60,0.7), rgba(15,15,15,0.9)), repeating-linear-gradient(45deg, #2a2a2a 0px, #3a3a3a 30px, #1a1a1a 60px)",
+    blendMode: "multiply",
     opacity: 0.9,
-    lightingReflectance: "rugged",
-    depth3d: "50mm High 3D Relief",
-    benefits: "Ultra featherweight polyurethane, waterproof, effortless wall screw-mount."
+    depth3d: "50mm High 3D Relief Crags",
+    benefits: "Only 2.5kg per sheet. Sticks directly to walls without structural weight load."
   },
   "pu-stone-backlit": {
     name: "Backlit Translucent PU Stone 2x9.5ft",
     code: "PU-2X9.5-EXEC",
-    category: "Translucent Stone Slab",
-    textureStyle: "radial-gradient(circle at 60% 40%, rgba(240, 200, 120, 0.4) 0%, rgba(40, 30, 20, 0.8) 70%), repeating-linear-gradient(135deg, rgba(200,160,100,0.2) 0px, rgba(100,70,40,0.5) 40px)",
+    category: "Translucent Stone Monolith",
+    textureStyle: "radial-gradient(circle at 50% 40%, rgba(240, 190, 100, 0.55) 0%, rgba(40, 30, 20, 0.85) 75%), repeating-linear-gradient(135deg, rgba(200,160,100,0.3) 0px, rgba(100,70,40,0.6) 40px)",
     blendMode: "hard-light",
-    opacity: 0.8,
-    lightingReflectance: "glowing",
-    depth3d: "Seamless 9.5ft Monolith",
-    benefits: "LED rear pass-through creates breathtaking halo glow behind TV or desk."
+    opacity: 0.85,
+    depth3d: "Continuous 9.5ft Floor-to-Ceiling",
+    benefits: "Allows integrated rear LED channels for dramatic glowing TV accent walls."
   },
   "french-moulding": {
-    name: "Parisian Classical French Moulding",
+    name: "Parisian French PU Wall Moulding",
     code: "PU-FR-CORN",
-    category: "French Panelling",
-    textureStyle: "linear-gradient(135deg, rgba(245,245,240,0.15) 0%, rgba(220,220,215,0.05) 100%)",
+    category: "French Wainscoting",
+    textureStyle: "linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(240,240,235,0.1) 100%)",
     blendMode: "soft-light",
-    opacity: 0.85,
-    lightingReflectance: "satin",
-    depth3d: "Custom Beaded Box Frames",
-    benefits: "Royal neoclassical European elegance, ready for luxury enamel or gold leaf."
+    opacity: 0.9,
+    depth3d: "Custom Picture-Frame Beadings",
+    benefits: "Neoclassical European wall framing. Lightweight, crack-proof, pre-primed."
   },
   "acoustic-oak": {
     name: "Natural Oak Acoustic Slat Panel",
     code: "MD-ACOUSTIC-PRO",
-    category: "Acoustic Wood Panel",
+    category: "Acoustic Wood Slat",
     textureStyle: "repeating-linear-gradient(90deg, #111 0px, #111 12px, #b08d57 12px, #b08d57 32px)",
     blendMode: "multiply",
     opacity: 0.88,
-    lightingReflectance: "organic",
-    depth3d: "Sound Absorbing Slat",
-    benefits: "NRC 0.85 sound absorption with authentic warm Scandinavian oak wood veneer."
+    depth3d: "NRC 0.85 Sound Absorbing",
+    benefits: "Real oak timber veneer with acoustic sound-dampening recycled felt."
   }
 };
 
 const LIGHTING_MODES = {
   warm: {
     name: "3000K Warm Cove Glow",
-    overlay: "radial-gradient(circle at 50% 10%, rgba(255, 180, 80, 0.35) 0%, rgba(0, 0, 0, 0.2) 70%)",
-    glowClass: "shadow-[0_0_50px_rgba(255,180,80,0.4)]"
+    overlay: "radial-gradient(circle at 50% 15%, rgba(255, 190, 100, 0.25) 0%, transparent 70%)"
   },
   neutral: {
-    name: "4000K Architectural Neutral",
-    overlay: "radial-gradient(circle at 50% 15%, rgba(240, 240, 255, 0.25) 0%, rgba(0, 0, 0, 0.15) 75%)",
-    glowClass: "shadow-[0_0_50px_rgba(240,240,255,0.3)]"
+    name: "4000K Neutral Architectural",
+    overlay: "radial-gradient(circle at 50% 20%, rgba(240, 240, 255, 0.15) 0%, transparent 75%)"
   },
   backlit: {
-    name: "LED Edge Halo Backlight",
-    overlay: "radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.5) 0%, rgba(0, 0, 0, 0.6) 85%)",
-    glowClass: "shadow-[0_0_70px_rgba(212,175,55,0.6)]"
+    name: "LED Edge Halo Glow",
+    overlay: "radial-gradient(ellipse at 50% 40%, rgba(212, 175, 55, 0.35) 0%, transparent 80%)"
   },
-  night: {
-    name: "Moody Evening Ambience",
-    overlay: "linear-gradient(180deg, rgba(5, 8, 15, 0.4) 0%, rgba(10, 15, 25, 0.8) 100%)",
-    glowClass: "shadow-[0_0_30px_rgba(10,15,25,0.9)]"
+  daylight: {
+    name: "Natural Daylight",
+    overlay: "linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%)"
   }
 };
 
@@ -140,6 +134,8 @@ function initVisualizerStudio() {
     if (baseImg) baseImg.src = room.image;
     
     if (wallOverlay) {
+      // Remove all previous clip classes
+      wallOverlay.className = `absolute inset-0 pointer-events-none transition-all duration-300 ${room.clipClass}`;
       wallOverlay.style.background = material.textureStyle;
       wallOverlay.style.mixBlendMode = material.blendMode;
       wallOverlay.style.opacity = material.opacity;
@@ -152,6 +148,7 @@ function initVisualizerStudio() {
     if (frenchFrames) {
       if (currentVisualizerState.material === 'french-moulding') {
         frenchFrames.classList.remove('hidden');
+        frenchFrames.className = `absolute inset-0 pointer-events-none flex items-center justify-around p-8 ${room.clipClass}`;
       } else {
         frenchFrames.classList.add('hidden');
       }
@@ -172,53 +169,52 @@ function initVisualizerStudio() {
 
     // Update WhatsApp Button Link
     if (shareBtn) {
-      const msg = `Hello Multi Decor! I designed a wall on your Studio Visualizer:\n` +
-                  `• Room: ${room.name}\n` +
-                  `• Selected Material: ${material.name} (Code: ${material.code})\n` +
-                  `• Lighting Mood: ${lighting.name}\n` +
-                  `Please provide quotation & required panel quantity for my wall dimensions.`;
+      const msg = `Assalam-o-Alaikum Multi Decor! I configured a wall design in your 3D Studio:\n\n` +
+                  `• Space: ${room.name}\n` +
+                  `• Selected Wall Material: ${material.name} (Code: ${material.code})\n` +
+                  `• Lighting Mood: ${lighting.name}\n\n` +
+                  `Please provide required panel estimate & price for my room dimensions. (No drilling required)`;
       shareBtn.href = `https://wa.me/923323444567?text=${encodeURIComponent(msg)}`;
     }
   }
 
-  // Event Listeners for Rooms
+  // Room listeners
   roomButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       roomButtons.forEach(b => {
-        b.classList.remove('border-[#D4AF37]', 'bg-[#1A2230]', 'text-[#ECC97D]');
-        b.classList.add('border-gray-800', 'bg-[#0D1117]', 'text-gray-400');
+        b.classList.remove('border-[#B8860B]', 'bg-[#FEF9EE]', 'text-[#8C6205]');
+        b.classList.add('border-gray-200', 'bg-white', 'text-gray-600');
       });
-      btn.classList.add('border-[#D4AF37]', 'bg-[#1A2230]', 'text-[#ECC97D]');
-      btn.classList.remove('border-gray-800', 'bg-[#0D1117]', 'text-gray-400');
+      btn.classList.add('border-[#B8860B]', 'bg-[#FEF9EE]', 'text-[#8C6205]');
+      btn.classList.remove('border-gray-200', 'bg-white', 'text-gray-600');
       currentVisualizerState.room = btn.dataset.room;
       updatePreview();
     });
   });
 
-  // Event Listeners for Materials
+  // Material listeners
   materialButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      materialButtons.forEach(b => b.classList.remove('swatch-active', 'border-[#D4AF37]', 'ring-2', 'ring-[#D4AF37]/50'));
-      btn.classList.add('swatch-active', 'border-[#D4AF37]', 'ring-2', 'ring-[#D4AF37]/50');
+      materialButtons.forEach(b => b.classList.remove('border-[#B8860B]', 'ring-2', 'ring-[#B8860B]/40', 'bg-[#FEF9EE]'));
+      btn.classList.add('border-[#B8860B]', 'ring-2', 'ring-[#B8860B]/40', 'bg-[#FEF9EE]');
       currentVisualizerState.material = btn.dataset.material;
       updatePreview();
     });
   });
 
-  // Event Listeners for Lighting
+  // Lighting listeners
   lightingButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       lightingButtons.forEach(b => {
-        b.classList.remove('bg-[#D4AF37]', 'text-black', 'active');
-        b.classList.add('bg-[#141A24]', 'text-gray-300');
+        b.classList.remove('btn-gold', 'active');
+        b.classList.add('btn-outline');
       });
-      btn.classList.add('bg-[#D4AF37]', 'text-black', 'active');
-      btn.classList.remove('bg-[#141A24]', 'text-gray-300');
+      btn.classList.add('btn-gold', 'active');
+      btn.classList.remove('btn-outline');
       currentVisualizerState.lighting = btn.dataset.lighting;
       updatePreview();
     });
   });
 
-  // Initialize
   updatePreview();
 }

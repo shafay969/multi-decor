@@ -1,4 +1,4 @@
-// Multi Decor - Luxury Interactive Catalog Engine
+// Multi Decor - Luxury Interactive Catalog Engine (Light Theme)
 
 const PRODUCTS_DATA = [
   {
@@ -18,9 +18,8 @@ const PRODUCTS_DATA = [
       finish: 'Matte Smoked Walnut & Teak Woodgrain',
       fireRating: 'B1 Class Flame Retardant'
     },
-    features: ['Deep 3D Fluting', 'Termite & Water Proof', 'Zero VOC & Formaldehyde', 'Interlocking Tongue & Groove'],
-    price: 'PKR 21 / unit (Wholesale)',
-    originalPrice: 'PKR 23',
+    features: ['No Drilling Needed (Direct Adhesive)', 'Deep 3D Fluting', 'Termite & 100% Water Proof', 'Interlocking Tongue & Groove'],
+    price: 'Wholesale Trade Rate',
     description: 'Our premier MD1900 architectural series delivers bold 24mm deep fluted ribs designed for statement TV accent walls, luxury headboards, and corporate lobby panelling.',
     popular: true,
     swatches: [
@@ -46,9 +45,8 @@ const PRODUCTS_DATA = [
       finish: 'Natural Volcanic Rock & Mountain Slate',
       fireRating: 'Class B1 Fire Proof'
     },
-    features: ['Only 2.5 kg/panel (Ultra Lightweight)', '100% Waterproof & Anti-Mould', 'Easy Screw / Adhesive Fixation', 'Authentic 3D Natural Rock Texture'],
-    price: 'PKR 1,450 / sheet',
-    originalPrice: 'PKR 1,650',
+    features: ['Only 2.5 kg/panel (Ultra Lightweight)', 'Stick with Adhesive / No Heavy Anchors', '100% Waterproof & Anti-Mould', 'Authentic 3D Natural Rock Texture'],
+    price: 'Wholesale Trade Rate',
     description: 'Revolutionary imported high-density polyurethane faux rock panel offering the majestic appearance of massive mountain slate at a fraction of the weight.',
     popular: true,
     swatches: [
@@ -74,8 +72,7 @@ const PRODUCTS_DATA = [
       fireRating: 'B1 Commercial Standard'
     },
     features: ['Continuous 9.5ft Floor-to-Ceiling Fit', 'LED Backlighting Compatible', 'Sound Dampening Thermal Barrier', 'Seamless Joint Interlock'],
-    price: 'PKR 1,650 / sheet',
-    originalPrice: 'PKR 1,850',
+    price: 'Wholesale Trade Rate',
     description: 'Designed specifically for luxury corporate offices and grand foyer walls. Seamless 9.5ft height eliminates horizontal seams for an unbroken natural stone monolith look.',
     popular: true,
     swatches: [
@@ -101,8 +98,7 @@ const PRODUCTS_DATA = [
       fireRating: 'B1 Class'
     },
     features: ['Extra Wide 12-inch Coverage', 'Dual Champagne Gold Inlay Lines', 'Ultra Slim 6mm Profile', 'Quick Click Lock System'],
-    price: 'PKR 24 / unit',
-    originalPrice: 'PKR 28',
+    price: 'Wholesale Trade Rate',
     description: 'The MM-8262 combines wide 12-inch surface efficiency with luxurious brushed gold micro-inlays, making it a favorite for modern luxury boutique interiors.',
     popular: true,
     swatches: [
@@ -118,7 +114,7 @@ const PRODUCTS_DATA = [
     category: "french",
     categoryLabel: "French Panelling",
     image: "assets/images/catalog/items/pu_french_moulding.png",
-    lifestyleImage: "assets/images/categories/cat_french_moulding.jpg",
+    lifestyleImage: "assets/images/french/french_wainscoting_room.jpg",
     specs: {
       width: 'Various Carved Profiles',
       length: 'Corner Elements & 2.4m Beadings',
@@ -128,13 +124,11 @@ const PRODUCTS_DATA = [
       fireRating: 'Class B1'
     },
     features: ['Exquisite Hand-Carved Baroque Aesthetic', 'Pre-Primed for Custom Enamel/Gold Gilding', 'Will Never Crack, Warp or Rot', 'Lightweight & Crack-Free'],
-    price: 'PKR 10 - 20 / pc',
-    originalPrice: 'PKR 25',
+    price: 'Wholesale Trade Rate',
     description: 'Authentic classical French wainscoting and wall beading accents. Create royal Parisian drawing rooms, elegant bedroom frames, and neoclassical wall divisions.',
     popular: true,
     swatches: [
-      { name: "Satin White Primed", color: "#F0F0F0", img: "assets/images/catalog/items/pu_french_moulding.png" },
-      { name: "Gilded Gold", color: "#D4AF37", img: "assets/images/catalog/items/pu_french_moulding.png" }
+      { name: "Satin White Primed", color: "#F0F0F0", img: "assets/images/catalog/items/pu_french_moulding.png" }
     ]
   },
   {
@@ -155,8 +149,7 @@ const PRODUCTS_DATA = [
       fireRating: 'B1 Waterproof'
     },
     features: ['100% Water & Moisture Proof', 'Flexible & High Tensile Strength', 'Miter-Cut Seamless Corners', 'No Sanding Required'],
-    price: 'PKR 14 / meter',
-    originalPrice: 'PKR 18',
+    price: 'Wholesale Trade Rate',
     description: 'Precision extruded polystyrene beadings and trims. Perfect for wall borders, picture frame wainscoting, ceiling cornices, and mirror borders.',
     popular: false,
     swatches: [
@@ -181,8 +174,7 @@ const PRODUCTS_DATA = [
       fireRating: 'B1 Standard'
     },
     features: ['Contemporary Asymmetrical Fluting', 'Scratch Resistant Surface', 'Zero Maintenance', 'Indoor & Semi-Outdoor Covered'],
-    price: 'PKR 22 / unit',
-    originalPrice: 'PKR 25',
+    price: 'Wholesale Trade Rate',
     description: 'Modern cool-grey tone engineered fluted panels ideal for contemporary minimalist apartments and commercial workspaces.',
     popular: false,
     swatches: [
@@ -207,90 +199,11 @@ const PRODUCTS_DATA = [
       fireRating: 'B1 Class'
     },
     features: ['Curvilinear Organic Wave Design', 'Acoustic Light Diffusion', 'Seamless Joint Fit', 'Anti-Fade UV Film'],
-    price: 'PKR 23 / unit',
-    originalPrice: 'PKR 26',
+    price: 'Wholesale Trade Rate',
     description: 'A distinctive undulating wave profile that casts dynamic light gradients throughout the day.',
     popular: false,
     swatches: [
       { name: "Wave Slate", color: "#333333", img: "assets/images/catalog/items/wpc_17_series_mm1704.png" }
-    ]
-  },
-  {
-    id: "md-wpc-1300",
-    name: "1300 Series Micro-Grid & Gold Pinstripe",
-    roman: "SERIES XIII",
-    code: "MM-1300",
-    category: "wpc",
-    categoryLabel: "WPC Wall Panels",
-    image: "assets/images/catalog/items/wpc_1300_series.png",
-    lifestyleImage: "assets/images/projects/bukhari_corporate.jpg",
-    specs: {
-      width: '160 mm',
-      length: '2900 mm',
-      thickness: '15 mm Diamond Textured Rib',
-      material: 'Reinforced Polymer Composite',
-      finish: 'Gunmetal Charcoal & Gold Pinstripe',
-      fireRating: 'B1 Standard'
-    },
-    features: ['Micro-Textured Diamond Slat Grid', 'Metallic Gold Accent Stripes', 'High Impact Core', 'Stain Resistant'],
-    price: 'PKR 23 / unit',
-    originalPrice: 'PKR 27',
-    description: 'Features a precision micro-grid tactile pattern paired with sleek gold highlight strips for executive boardrooms.',
-    popular: false,
-    swatches: [
-      { name: "Gunmetal Gold", color: "#222", img: "assets/images/catalog/items/wpc_1300_series.png" }
-    ]
-  },
-  {
-    id: "md-wpc-1000",
-    name: "1000 Series Scandinavian Warm Oak",
-    roman: "SERIES X",
-    code: "MM-1000",
-    category: "wpc",
-    categoryLabel: "WPC Wall Panels",
-    image: "assets/images/catalog/items/wpc_1000_series.png",
-    lifestyleImage: "assets/images/projects/bahria_luxury_villa.jpg",
-    specs: {
-      width: '150 mm',
-      length: '2900 mm',
-      thickness: '12 mm Slat Profile',
-      material: 'Composite Wood Fiber',
-      finish: 'Deep Grain Natural Warm Oak',
-      fireRating: 'B1 Class'
-    },
-    features: ['Warm Scandinavian Natural Oak Texture', 'Embossed Natural Woodgrain', 'Thermal Insulation', 'Hygienic Surface'],
-    price: 'PKR 20 / unit',
-    originalPrice: 'PKR 24',
-    description: 'Warm natural timber tone panel bringing the organic warmth of authentic oak slats with none of the rotting or maintenance of raw wood.',
-    popular: false,
-    swatches: [
-      { name: "Warm Oak", color: "#A07040", img: "assets/images/catalog/items/wpc_1000_series.png" }
-    ]
-  },
-  {
-    id: "md-wpc-200",
-    name: "200 Series Double-Rib Gloss Walnut",
-    roman: "SERIES II",
-    code: "MD200-02",
-    category: "wpc",
-    categoryLabel: "WPC Wall Panels",
-    image: "assets/images/catalog/items/wpc_200_series_md200_02.png",
-    lifestyleImage: "assets/images/projects/islamabad_hotel_lobby.jpg",
-    specs: {
-      width: '150 mm',
-      length: '2900 mm',
-      thickness: '16 mm Double Slat',
-      material: 'High-Strength Polymer Composite',
-      finish: 'Rich Gloss Golden Walnut',
-      fireRating: 'B1 Flame Resistant'
-    },
-    features: ['High gloss varnish finish', 'Special contractor bulk pack rate', 'High density core', 'Fast delivery in Karachi'],
-    price: 'PKR 22 / unit',
-    originalPrice: 'PKR 24',
-    description: 'High volume favorite for multi-room developments and commercial renovation projects across Karachi and Pakistan.',
-    popular: true,
-    swatches: [
-      { name: "Gloss Walnut", color: "#6E4720", img: "assets/images/catalog/items/wpc_200_series_md200_02.png" }
     ]
   },
   {
@@ -311,8 +224,7 @@ const PRODUCTS_DATA = [
       fireRating: 'NRC 0.85 Sound Absorption'
     },
     features: ['NRC 0.85 Sound Absorption Rating', 'Eliminates Room Echo & Reverb', 'Premium Real Timber Veneer', 'Architectural Modern Vibe'],
-    price: 'PKR 3,200 / sheet',
-    originalPrice: 'PKR 3,600',
+    price: 'Wholesale Trade Rate',
     description: 'High-performance acoustic wood slat panels with sound-absorbing backing felt. Transforms home theatres, podcasts, conference rooms, and living areas.',
     popular: true,
     swatches: [
@@ -325,7 +237,7 @@ function getWhatsAppLink(productName, productCode, phone = "923323444567") {
   const text = `Assalam-o-Alaikum Multi Decor! I would like to inquire regarding wholesale orders for:\n` +
                `• Product: ${productName}\n` +
                `• Model Code: ${productCode}\n` +
-               `Please share current stock availability, trade rate card & sample availability in DHA Karachi.`;
+               `Please share stock availability & wholesale rate card in DHA Karachi. (No drilling required)`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 }
 
@@ -335,68 +247,61 @@ function renderProducts(items, containerId = 'productsGrid') {
 
   if (items.length === 0) {
     container.innerHTML = `
-      <div class="col-span-full text-center py-20 bg-[#0D1017] rounded-3xl border border-[rgba(212,175,55,0.15)] p-8">
-        <i class="fa-solid fa-gem text-4xl text-[#D4AF37] mb-4"></i>
-        <h3 class="text-2xl font-bold text-white font-editorial mb-2">No Matching Profiles Found</h3>
-        <p class="text-gray-400 text-xs max-w-md mx-auto">Try searching for specific model numbers like "1900", "PU", "8262", "French", or select another collection category.</p>
+      <div class="col-span-full text-center py-16 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+        <i class="fa-solid fa-layer-group text-4xl text-[#B8860B] mb-3"></i>
+        <h3 class="text-xl font-bold text-[#0F172A] mb-1">No Matching Profiles Found</h3>
+        <p class="text-gray-500 text-xs max-w-md mx-auto">Try searching for model numbers like "1900", "PU", "8262", or select another category filter.</p>
       </div>
     `;
     return;
   }
 
   container.innerHTML = items.map(product => `
-    <div class="glass-panel p-6 flex flex-col justify-between group" data-category="${product.category}">
+    <div class="clean-card p-5 flex flex-col justify-between group" data-category="${product.category}">
       <div>
-        <!-- Image Box with Roman Badge -->
-        <div class="relative overflow-hidden bg-[#07090D] h-64 rounded-2xl mb-5 cursor-pointer border border-gray-800/80 group-hover:border-[#D4AF37]/50 transition-colors" onclick="openProductModal('${product.id}')">
-          <img id="card-img-${product.id}" src="${product.image}" alt="${product.name}" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700">
+        <!-- Image Box -->
+        <div class="relative overflow-hidden bg-[#F8F9FA] h-56 rounded-xl mb-4 cursor-pointer border border-gray-100 group-hover:border-[#B8860B]/40 transition-colors" onclick="openProductModal('${product.id}')">
+          <img id="card-img-${product.id}" src="${product.image}" alt="${product.name}" class="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
           
-          <!-- Category & Roman Badge -->
-          <div class="absolute top-3 left-3 bg-[#07090D]/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-[#ECC97D] border border-[#D4AF37]/30 tracking-wider">
+          <!-- Roman Badge -->
+          <div class="absolute top-2.5 left-2.5 bg-white/90 px-2.5 py-0.5 rounded text-[9px] font-bold text-[#8C6205] border border-gray-200 shadow-sm">
             ${product.roman || product.categoryLabel}
           </div>
 
-          <div class="absolute top-3 right-3 bg-[#D4AF37] text-black px-2.5 py-0.5 rounded text-[10px] font-black shadow-md">
+          <div class="absolute top-2.5 right-2.5 bg-[#B8860B] text-white px-2 py-0.5 rounded text-[9px] font-bold shadow-sm">
             ${product.code}
-          </div>
-
-          <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="btn-gold-luxury px-4 py-2 text-[10px] uppercase tracking-wider flex items-center gap-1.5 shadow-2xl">
-              <i class="fa-solid fa-eye"></i> View Blueprint Specs
-            </span>
           </div>
         </div>
 
-        <!-- Swatches Preview -->
+        <!-- Swatches -->
         ${product.swatches && product.swatches.length > 1 ? `
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="text-[9px] text-gray-500 uppercase tracking-widest mr-1">Finishes:</span>
+          <div class="flex items-center gap-1.5 mb-2.5">
+            <span class="text-[9px] text-gray-400 uppercase tracking-wider mr-0.5">Finishes:</span>
             ${product.swatches.map(s => `
-              <button onclick="event.stopPropagation(); document.getElementById('card-img-${product.id}').src='${s.img}'" title="${s.name}" class="w-4 h-4 rounded-full border border-gray-700 hover:border-[#D4AF37] transition-all hover:scale-125" style="background-color: ${s.color};"></button>
+              <button onclick="event.stopPropagation(); document.getElementById('card-img-${product.id}').src='${s.img}'" title="${s.name}" class="w-3.5 h-3.5 rounded-full border border-gray-300 hover:scale-125 transition-transform" style="background-color: ${s.color};"></button>
             `).join('')}
           </div>
         ` : ''}
 
         <!-- Details -->
         <div>
-          <span class="text-[10px] font-bold text-[#D4AF37] uppercase tracking-[0.2em] block mb-1">${product.categoryLabel}</span>
-          <h3 class="text-lg font-bold text-white group-hover:text-[#ECC97D] transition-colors leading-snug cursor-pointer font-modern mb-2" onclick="openProductModal('${product.id}')">
+          <span class="text-[9px] font-bold text-[#B8860B] uppercase tracking-wider block mb-1">${product.categoryLabel}</span>
+          <h3 class="text-base font-bold text-[#0F172A] group-hover:text-[#B8860B] transition-colors leading-snug cursor-pointer mb-1.5" onclick="openProductModal('${product.id}')">
             ${product.name}
           </h3>
-          <p class="text-xs text-gray-400 line-clamp-2 mb-4 leading-relaxed font-light">
+          <p class="text-xs text-gray-500 line-clamp-2 mb-3 leading-relaxed">
             ${product.description}
           </p>
 
           <!-- Micro Spec Pills -->
-          <div class="grid grid-cols-2 gap-2 text-[11px] bg-[#07090D] p-3 rounded-xl border border-gray-800/80 mb-5">
+          <div class="grid grid-cols-2 gap-2 text-[11px] bg-[#F8F9FA] p-2.5 rounded-lg border border-gray-100 mb-4">
             <div>
-              <span class="text-gray-500 block text-[9px] uppercase tracking-wider">Depth:</span>
-              <strong class="text-gray-200">${product.specs.thickness.split(' ')[0]} ${product.specs.thickness.split(' ')[1] || ''}</strong>
+              <span class="text-gray-400 block text-[9px] uppercase">Depth:</span>
+              <strong class="text-gray-800">${product.specs.thickness.split(' ')[0]} ${product.specs.thickness.split(' ')[1] || ''}</strong>
             </div>
             <div>
-              <span class="text-gray-500 block text-[9px] uppercase tracking-wider">Height:</span>
-              <strong class="text-gray-200">${product.specs.length.split('(')[0]}</strong>
+              <span class="text-gray-400 block text-[9px] uppercase">Height:</span>
+              <strong class="text-gray-800">${product.specs.length.split('(')[0]}</strong>
             </div>
           </div>
         </div>
@@ -404,10 +309,10 @@ function renderProducts(items, containerId = 'productsGrid') {
 
       <!-- Footer Buttons -->
       <div class="pt-2 flex items-center gap-2">
-        <button onclick="openProductModal('${product.id}')" class="flex-1 py-2.5 px-3 rounded-xl btn-glass-luxury text-[11px] text-center uppercase tracking-wider">
+        <button onclick="openProductModal('${product.id}')" class="flex-1 py-2 rounded-lg btn-outline text-xs text-center font-bold">
           Specs
         </button>
-        <a href="${getWhatsAppLink(product.name, product.code)}" target="_blank" rel="noopener" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-lg transition-all">
+        <a href="${getWhatsAppLink(product.name, product.code)}" target="_blank" rel="noopener" class="flex-1 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1 shadow-sm transition-all">
           <i class="fa-brands fa-whatsapp text-sm"></i> Order
         </a>
       </div>
@@ -424,63 +329,63 @@ function openProductModal(productId) {
   if (!modal || !modalContent) return;
 
   modalContent.innerHTML = `
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 sm:p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 sm:p-8">
       
-      <!-- Left: Visuals -->
-      <div class="space-y-4">
-        <div class="rounded-2xl overflow-hidden bg-[#07090D] border border-[rgba(212,175,55,0.3)] h-80 flex items-center justify-center relative p-6">
+      <!-- Visuals -->
+      <div class="space-y-3">
+        <div class="rounded-xl overflow-hidden bg-[#F8F9FA] border border-gray-200 h-72 flex items-center justify-center relative p-4">
           <img id="modalMainImg" src="${product.image}" alt="${product.name}" class="max-h-full max-w-full object-contain">
-          <span class="absolute top-4 left-4 bg-[#D4AF37] text-black text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+          <span class="absolute top-3 left-3 bg-[#B8860B] text-white text-[10px] font-bold px-2.5 py-1 rounded">
             ${product.code}
           </span>
         </div>
 
-        <div class="grid grid-cols-2 gap-3">
-          <div onclick="document.getElementById('modalMainImg').src='${product.image}'" class="cursor-pointer rounded-xl overflow-hidden border-2 border-[#D4AF37] h-20 bg-[#07090D] p-2 flex items-center justify-center">
+        <div class="grid grid-cols-2 gap-2">
+          <div onclick="document.getElementById('modalMainImg').src='${product.image}'" class="cursor-pointer rounded-lg overflow-hidden border-2 border-[#B8860B] h-16 bg-[#F8F9FA] p-1.5 flex items-center justify-center">
             <img src="${product.image}" class="max-h-full object-contain">
           </div>
-          <div onclick="document.getElementById('modalMainImg').src='${product.lifestyleImage}'" class="cursor-pointer rounded-xl overflow-hidden border border-gray-800 hover:border-[#D4AF37] h-20 bg-[#07090D]">
+          <div onclick="document.getElementById('modalMainImg').src='${product.lifestyleImage}'" class="cursor-pointer rounded-lg overflow-hidden border border-gray-200 hover:border-[#B8860B] h-16 bg-gray-100">
             <img src="${product.lifestyleImage}" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
 
-      <!-- Right: Detailed Specs & Blueprint -->
+      <!-- Specs -->
       <div class="flex flex-col justify-between">
         <div>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-[#D4AF37]/15 text-[#ECC97D] border border-[#D4AF37]/30 uppercase tracking-widest">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#FEF9EE] text-[#8C6205] border border-[#F3DFB0]">
               ${product.categoryLabel}
             </span>
-            <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+            <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1">
               <i class="fa-solid fa-circle-check text-[10px]"></i> DHA Karachi Stock Ready
             </span>
           </div>
 
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight font-editorial">${product.name}</h2>
-          <p class="text-xs sm:text-sm text-gray-300 mb-6 leading-relaxed font-light">${product.description}</p>
+          <h2 class="text-2xl font-bold text-[#0F172A] mb-1 font-luxury">${product.name}</h2>
+          <p class="text-xs text-gray-600 mb-4 leading-relaxed">${product.description}</p>
 
           <!-- Specifications Table -->
-          <div class="space-y-3 mb-6">
-            <h4 class="text-[10px] font-bold text-[#ECC97D] uppercase tracking-[0.25em]">Technical Blueprint:</h4>
-            <div class="grid grid-cols-2 gap-3 text-xs bg-[#07090D] p-4 rounded-xl border border-gray-800">
-              <div><span class="text-gray-500 block text-[10px] uppercase">Dimensions:</span> <strong class="text-white">${product.specs.length} × ${product.specs.width}</strong></div>
-              <div><span class="text-gray-500 block text-[10px] uppercase">Depth Profile:</span> <strong class="text-white">${product.specs.thickness}</strong></div>
-              <div><span class="text-gray-500 block text-[10px] uppercase">Core Polymer:</span> <strong class="text-white">${product.specs.material}</strong></div>
-              <div><span class="text-gray-500 block text-[10px] uppercase">Surface Finish:</span> <strong class="text-white">${product.specs.finish}</strong></div>
-              <div class="col-span-2"><span class="text-gray-500 block text-[10px] uppercase">Fire Rating:</span> <strong class="text-white">${product.specs.fireRating}</strong></div>
+          <div class="space-y-2 mb-4">
+            <h4 class="text-[10px] font-bold text-[#8C6205] uppercase tracking-wider">Technical Blueprint:</h4>
+            <div class="grid grid-cols-2 gap-2 text-xs bg-[#F8F9FA] p-3 rounded-xl border border-gray-200">
+              <div><span class="text-gray-400 block text-[9px] uppercase">Dimensions:</span> <strong class="text-[#0F172A]">${product.specs.length} × ${product.specs.width}</strong></div>
+              <div><span class="text-gray-400 block text-[9px] uppercase">Depth Profile:</span> <strong class="text-[#0F172A]">${product.specs.thickness}</strong></div>
+              <div><span class="text-gray-400 block text-[9px] uppercase">Core Material:</span> <strong class="text-[#0F172A]">${product.specs.material}</strong></div>
+              <div><span class="text-gray-400 block text-[9px] uppercase">Surface Finish:</span> <strong class="text-[#0F172A]">${product.specs.finish}</strong></div>
+              <div class="col-span-2"><span class="text-gray-400 block text-[9px] uppercase">Installation:</span> <strong class="text-emerald-800">Direct Adhesive / Zero Drilling Required</strong></div>
             </div>
           </div>
         </div>
 
         <!-- Action CTAs -->
-        <div class="space-y-3 pt-4 border-t border-gray-800">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <a href="${getWhatsAppLink(product.name, product.code, '923323444567')}" target="_blank" rel="noopener" class="py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition-all">
+        <div class="space-y-2 pt-3 border-t border-gray-200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <a href="${getWhatsAppLink(product.name, product.code)}" target="_blank" rel="noopener" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all">
               <i class="fa-brands fa-whatsapp text-base"></i> Order on WhatsApp
             </a>
-            <a href="visualizer.html" class="py-3.5 px-4 rounded-xl btn-glass-luxury text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-              <i class="fa-solid fa-wand-magic-sparkles text-[#D4AF37]"></i> Test in 3D Studio
+            <a href="visualizer.html" class="py-3 px-4 rounded-xl btn-outline text-xs uppercase tracking-wider flex items-center justify-center gap-2 font-bold">
+              <i class="fa-solid fa-wand-magic-sparkles text-[#B8860B]"></i> Test in 3D Studio
             </a>
           </div>
         </div>
@@ -544,11 +449,11 @@ function initCatalogFilters() {
   filterPills.forEach(btn => {
     btn.addEventListener('click', () => {
       filterPills.forEach(b => {
-        b.classList.remove('btn-gold-luxury', 'active');
-        b.classList.add('btn-glass-luxury');
+        b.classList.remove('btn-gold', 'active');
+        b.classList.add('btn-outline');
       });
-      btn.classList.add('btn-gold-luxury', 'active');
-      btn.classList.remove('btn-glass-luxury');
+      btn.classList.add('btn-gold', 'active');
+      btn.classList.remove('btn-outline');
       activeCategory = btn.dataset.category || 'all';
       applyFilters();
     });
