@@ -20,7 +20,7 @@
           <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> 3D Wall Architecture Studio
         </span>
         <span class="hidden md:inline text-gray-500">|</span>
-        <span class="hidden md:inline text-gray-300">True 3D architectural renders • No drilling needed</span>
+        <span class="hidden md:inline text-gray-300">True 3D architectural renders • Interactive CCT lighting & French moulding frames</span>
       </div>
       <div class="flex items-center gap-4 text-xs">
         <a href="tel:03323444567" class="text-[#ECC97D] font-bold">0332-3444567</a>
@@ -83,7 +83,7 @@
           <h1 class="text-3xl sm:text-4xl font-bold text-[#0F172A] font-luxury">Interactive 3D Room & Wall Studio</h1>
         </div>
         <p class="text-xs text-gray-500 max-w-md">
-          Select any space and surface finish to inspect authentic 3D renders showing panels installed realistically on walls with proper lighting depth.
+          Switch spaces, apply genuine panel finishes, adjust CCT cove lighting temperatures, and test French moulding frame overlays in real time.
         </p>
       </div>
 
@@ -94,17 +94,17 @@
         <div class="lg:col-span-7 space-y-4">
           
           <!-- Room Switchers -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
-            <button class="vis-room-btn p-3 rounded-xl border border-[#B8860B] bg-[#FEF9EE] text-[#8C6205] font-bold flex items-center justify-center gap-2 transition-all shadow-sm" data-room="living">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold">
+            <button class="vis-room-btn p-3 rounded-xl border border-[#B8860B] bg-[#FEF9EE] text-[#8C6205] flex items-center justify-center gap-2 transition-all shadow-sm" data-room="living">
               <i class="fa-solid fa-couch"></i> Living Room
             </button>
-            <button class="vis-room-btn p-3 rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-black font-bold flex items-center justify-center gap-2 transition-all" data-room="office">
+            <button class="vis-room-btn p-3 rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-black flex items-center justify-center gap-2 transition-all" data-room="office">
               <i class="fa-solid fa-briefcase"></i> Office Suite
             </button>
-            <button class="vis-room-btn p-3 rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-black font-bold flex items-center justify-center gap-2 transition-all" data-room="bedroom">
+            <button class="vis-room-btn p-3 rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-black flex items-center justify-center gap-2 transition-all" data-room="bedroom">
               <i class="fa-solid fa-bed"></i> Master Suite
             </button>
-            <button class="vis-room-btn p-3 rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-black font-bold flex items-center justify-center gap-2 transition-all" data-room="tv_wall">
+            <button class="vis-room-btn p-3 rounded-xl border border-gray-200 bg-white text-gray-600 hover:text-black flex items-center justify-center gap-2 transition-all" data-room="tv_wall">
               <i class="fa-solid fa-tv"></i> TV Accent Wall
             </button>
           </div>
@@ -112,24 +112,32 @@
           <!-- Studio Display Box -->
           <div class="visualizer-preview-box relative aspect-[16/10] border border-gray-200 shadow-md rounded-2xl overflow-hidden group bg-gray-100">
             
-            <!-- Real 3D Architectural Render -->
-            <img id="visBaseImage" src="assets/images/visualizer/renders/living_walnut.jpg" alt="3D Architectural Wall Render" class="w-full h-full object-cover transition-opacity duration-300" loading="eager">
+            <!-- 1. Real 3D Architectural Render -->
+            <img id="visBaseImage" src="assets/images/visualizer/renders/living_walnut.jpg" alt="3D Architectural Wall Render" class="w-full h-full object-cover transition-all duration-300" loading="eager">
 
-            <!-- Status HUD -->
+            <!-- 2. Dynamic Lighting Glow Overlay -->
+            <div id="visLightingOverlay" class="absolute inset-0 pointer-events-none transition-opacity duration-300"></div>
+
+            <!-- 3. French Moulding Wainscoting Frame Customizer Overlay -->
+            <div id="visFrenchFramesOverlay" class="absolute inset-0 pointer-events-none transition-all duration-300 hidden"></div>
+
+            <!-- 4. Status HUD -->
             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-gray-200 text-xs font-bold text-[#0F172A] z-10 flex items-center gap-2 shadow-sm">
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span id="visRoomLabel">Luxury Living Room — Real 3D Panelling View</span>
+              <span id="visRoomLabel">Luxury Living Room — 3D Panelling Studio</span>
             </div>
           </div>
 
-          <!-- Lighting Temperature Controls -->
-          <div class="clean-card p-4 border border-gray-200">
-            <div class="flex items-center justify-between mb-3 text-xs">
+          <!-- Active Lighting & Dimmer Controls -->
+          <div class="clean-card p-5 border border-gray-200 space-y-4">
+            <div class="flex items-center justify-between text-xs">
               <span class="font-bold text-gray-700 uppercase tracking-wider flex items-center gap-2">
-                <i class="fa-solid fa-lightbulb text-[#B8860B]"></i> Architectural Lighting Ambience:
+                <i class="fa-solid fa-lightbulb text-[#B8860B]"></i> Architectural CCT Lighting Mode:
               </span>
-              <span class="text-[#8C6205] text-[11px] font-bold">Dynamic CCT Kelvin</span>
+              <span class="text-[#8C6205] text-[11px] font-bold">Dynamic Ambient Ambience</span>
             </div>
+
+            <!-- 4 Lighting Mode Buttons -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold">
               <button class="vis-lighting-btn py-2 px-3 rounded-xl btn-gold active flex items-center justify-center gap-1.5 transition-all shadow-sm" data-lighting="warm">
                 <i class="fa-solid fa-sun text-xs"></i> 3000K Warm
@@ -138,11 +146,54 @@
                 <i class="fa-solid fa-cloud text-xs"></i> 4000K Neutral
               </button>
               <button class="vis-lighting-btn py-2 px-3 rounded-xl btn-outline flex items-center justify-center gap-1.5 transition-all" data-lighting="backlit">
-                <i class="fa-solid fa-circle-dot text-xs text-[#B8860B]"></i> LED Edge Backlit
+                <i class="fa-solid fa-circle-dot text-xs text-[#B8860B]"></i> LED Backlit
               </button>
               <button class="vis-lighting-btn py-2 px-3 rounded-xl btn-outline flex items-center justify-center gap-1.5 transition-all" data-lighting="daylight">
                 <i class="fa-solid fa-sun text-xs text-amber-500"></i> Daylight
               </button>
+            </div>
+
+            <!-- Live Lighting Dimmer Slider -->
+            <div class="pt-2 border-t border-gray-100 flex items-center justify-between gap-4 text-xs">
+              <span class="text-gray-600 font-bold whitespace-nowrap">
+                <i class="fa-solid fa-sliders text-[#B8860B] mr-1"></i> Light Intensity:
+              </span>
+              <input type="range" id="visDimmerSlider" min="0" max="100" value="80" class="w-full accent-[#B8860B] cursor-pointer">
+              <span id="visDimmerValue" class="text-xs font-bold text-[#8C6205] min-w-[36px] text-right">80%</span>
+            </div>
+          </div>
+
+          <!-- French Moulding Wainscoting Frame Builder Controls -->
+          <div class="clean-card p-5 border border-gray-200">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+              <div>
+                <strong class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">
+                  <i class="fa-solid fa-crown text-[#B8860B] mr-1"></i> French Wainscoting Moulding Framing
+                </strong>
+                <span class="text-[11px] text-gray-500">Test classical Parisian picture frames over your selected wall panelling.</span>
+              </div>
+              <button id="visToggleFrenchOverlay" class="btn-outline px-4 py-1.5 text-xs font-bold whitespace-nowrap shadow-sm">
+                <i class="fa-solid fa-crown text-xs"></i> Add French Mouldings
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2 border-t border-gray-100">
+              <div>
+                <label class="block text-gray-600 font-bold mb-1">Moulding Profile Layout:</label>
+                <select id="visFrenchStyleSelect" class="w-full bg-[#F8F9FA] border border-gray-300 rounded-lg p-2 text-[#0F172A] font-semibold focus:outline-none focus:border-[#B8860B]">
+                  <option value="dual-box">Dual Parisian Picture Frames</option>
+                  <option value="chair-rail">Two-Tier Wainscoting + Chair Rail M-74</option>
+                  <option value="triple-box">Triple Gallery Boxes + Floral Crown</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-gray-600 font-bold mb-1">Frame Finish & Gilding:</label>
+                <select id="visFrenchColorSelect" class="w-full bg-[#F8F9FA] border border-gray-300 rounded-lg p-2 text-[#0F172A] font-semibold focus:outline-none focus:border-[#B8860B]">
+                  <option value="gold">Champagne Gold Gilded Frame</option>
+                  <option value="white">Satin Primed Pure White</option>
+                  <option value="charcoal">Modern Charcoal Slate Accent</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -153,8 +204,8 @@
           
           <div class="clean-card p-5 border border-gray-200">
             <h3 class="text-xs font-bold text-[#0F172A] uppercase tracking-wider mb-3 flex items-center justify-between">
-              <span>Select Wall Material</span>
-              <span class="text-[#8C6205] font-normal lowercase text-[11px]">Click swatch to switch 3D render</span>
+              <span>Select Wall Material Finish</span>
+              <span class="text-[#8C6205] font-normal lowercase text-[11px]">Click swatch to switch render</span>
             </h3>
 
             <div class="grid grid-cols-2 gap-2.5 text-xs">
@@ -243,7 +294,7 @@
               </div>
               <div class="col-span-2">
                 <span class="text-gray-500 block text-[9px] uppercase tracking-wider">Advantage:</span>
-                <strong id="visMaterialBenefits" class="text-gray-700 font-normal">Deep vertical flutes create dramatic shadow relief behind sofa. Zero drilling required.</strong>
+                <strong id="visMaterialBenefits" class="text-gray-700 font-normal">Deep vertical flutes create bold architectural shadow lines behind the sofa. Zero drilling required.</strong>
               </div>
             </div>
 
@@ -270,10 +321,5 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/visualizer.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      initVisualizerStudio();
-    });
-  </script>
 </body>
 </html>
